@@ -1,0 +1,41 @@
+# Key binding overrides applied by install.ps1 to options.txt.
+# FTB Quests editor keys clash with movement and other keys, so they are unbound.
+key_key.ftbquests.gui.zoom_in:key.keyboard.unknown
+key_key.ftbquests.gui.zoom_out:key.keyboard.unknown
+key_key.ftbquests.gui.zoom_reset:key.keyboard.unknown
+key_key.ftbquests.gui.next_chapter:key.keyboard.unknown
+key_key.ftbquests.gui.prev_chapter:key.keyboard.unknown
+key_key.ftbquests.gui.recenter:key.keyboard.unknown
+key_key.ftbquests.gui.search:key.keyboard.unknown
+key_key.ftbquests.gui.extended_info:key.keyboard.unknown
+key_key.ftbquests.gui.move_up:key.keyboard.unknown
+key_key.ftbquests.gui.move_down:key.keyboard.unknown
+key_key.ftbquests.gui.move_left:key.keyboard.unknown
+key_key.ftbquests.gui.move_right:key.keyboard.unknown
+key_key.ftbquests.gui.player_prefs:key.keyboard.unknown
+key_key.ftbquests.gui_editor.undo:key.keyboard.unknown
+key_key.ftbquests.gui_editor.redo:key.keyboard.unknown
+key_key.ftbquests.gui_editor.select_all:key.keyboard.unknown
+key_key.ftbquests.gui_editor.select_none:key.keyboard.unknown
+key_key.ftbquests.gui_editor.delete:key.keyboard.unknown
+key_key.ftbquests.gui_editor.force_delete:key.keyboard.unknown
+key_key.ftbquests.gui_editor.toggle_crosshairs:key.keyboard.unknown
+key_key.ftbquests.gui_editor.copy:key.keyboard.unknown
+key_key.ftbquests.gui_editor.paste:key.keyboard.unknown
+key_key.ftbquests.gui_editor.reward_tables:key.keyboard.unknown
+key_key.ftbquests.gui_editor.complete_object:key.keyboard.unknown
+key_key.ftbquests.gui_editor.reset_object:key.keyboard.unknown
+key_key.ftbquests.gui_editor.save:key.keyboard.unknown
+key_key.ftbquests.gui_editor.reload_theme:key.keyboard.unknown
+key_key.ftbquests.gui_quest_panel.edit_title:key.keyboard.unknown
+key_key.ftbquests.gui_quest_panel.edit_subtitle:key.keyboard.unknown
+key_key.ftbquests.gui_quest_panel.edit_desc:key.keyboard.unknown
+key_key.ftbquests.gui_quest_panel.add_page_break:key.keyboard.unknown
+key_key.ftbquests.gui_quest_panel.add_line:key.keyboard.unknown
+key_key.ftbquests.gui_quest_panel.add_image:key.keyboard.unknown
+key_key.ftbquests.gui_quest_panel.edit_quest_props:key.keyboard.unknown
+# B is the backpack. Emotes move to J. Waypoints are added from the U menu.
+key_key.emotecraft.fastchoose:key.keyboard.j
+key_gui.xaero_new_waypoint:key.keyboard.unknown
+# Z enlarges the minimap. Backpack tool cycling uses the scroll wheel.
+key_key.travelersbackpack.cycle_tool:key.keyboard.unknown
