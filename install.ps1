@@ -104,6 +104,9 @@ $names = $overrides | ForEach-Object { ($_ -split ':', 2)[0] }
 $lines = @()
 if (Test-Path $options) { $lines = @(Get-Content $options -Encoding utf8 | Where-Object { ($_ -split ':', 2)[0] -notin $names }) }
 $lines += $overrides
+# Without a version line Minecraft treats the file as pre-1.13 and reads key names as numbers.
+# That fails, and Minecraft then resets every option to default. 3955 is the 1.21.1 data version.
+if (-not ($lines | Where-Object { $_ -like 'version:*' })) { $lines = @('version:3955') + $lines }
 # Minecraft misreads options.txt when it starts with a BOM, so write UTF-8 without one.
 [IO.File]::WriteAllLines($options, [string[]]$lines, $utf8)
 
