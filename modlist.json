@@ -102,6 +102,15 @@
                       "sha512":  "1dcd6d8576b5a664ca39aa530964c3439275c9ec1f83e4a43a35eb1eea125158f18d3a1d1b453db869f3f353555dfe69abc0460221c66f50613b5b30079ac54a"
                   },
                   {
+                      "id":  "tectonic",
+                      "version":  "3.0.28-fabric-21.1",
+                      "side":  "server",
+                      "type":  "mod",
+                      "file":  "tectonic-3.0.28-fabric-21.1.jar",
+                      "url":  "https://cdn.modrinth.com/data/lWDHr9jE/versions/WdDiEKMn/tectonic-3.0.28-fabric-21.1.jar",
+                      "sha512":  "a15a85fb5c6d134d0967fa3ccd6797fa28348b69937b65b2a3bcd6173609e84ae97bd8400eb01013167ceca3434bf97216e879d4b0277c007f6deda7aa076afd"
+                  },
+                  {
                       "id":  "lithostitched",
                       "version":  "1.8.1-fabric-21.1",
                       "side":  "server",
