@@ -419,7 +419,7 @@
                   {
                       "id":  "inventory-sorting",
                       "version":  "1.9.0-1.21",
-                      "side":  "server",
+                      "side":  "both",
                       "type":  "mod",
                       "file":  "InventorySorter-1.9.0-1.21.jar",
                       "url":  "https://cdn.modrinth.com/data/5ibSyLAz/versions/Y0KUoPqY/InventorySorter-1.9.0-1.21.jar",
