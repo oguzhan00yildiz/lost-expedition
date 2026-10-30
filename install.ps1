@@ -12,7 +12,8 @@ $mcDir = Join-Path $env:APPDATA '.minecraft'
 $packDir = Join-Path $mcDir 'lost-expedition'
 $modsDir = Join-Path $packDir 'mods'
 $shaderDir = Join-Path $mcDir 'shaderpacks'
-New-Item -ItemType Directory -Force $modsDir, $shaderDir | Out-Null
+$resourceDir = Join-Path $mcDir 'resourcepacks'
+New-Item -ItemType Directory -Force $modsDir, $shaderDir, $resourceDir | Out-Null
 
 Write-Host 'Reading mod list...'
 if (Test-Path $Modlist) { $list = Get-Content $Modlist -Raw | ConvertFrom-Json }
@@ -93,6 +94,8 @@ $clientFiles = $list.files | Where-Object { $_.side -ne 'server' }
 Sync-Files @($clientFiles | Where-Object type -eq 'mod') $modsDir -Prune
 # Shader folder is shared with other versions, so nothing gets removed there.
 Sync-Files @($clientFiles | Where-Object type -eq 'shader') $shaderDir
+$resourceFiles = @($clientFiles | Where-Object type -eq 'resourcepack')
+Sync-Files $resourceFiles $resourceDir
 
 # Key binding overrides fix clashes between mods (for example FTB Quests editor keys on W A S D).
 $options = Join-Path $mcDir 'options.txt'
@@ -104,11 +107,12 @@ $names = $overrides | ForEach-Object { ($_ -split ':', 2)[0] }
 $lines = @()
 if (Test-Path $options) { $lines = @(Get-Content $options -Encoding utf8 | Where-Object { ($_ -split ':', 2)[0] -notin $names }) }
 $lines += $overrides
-# Continuity ships connected glass as built-in packs that start off. Add them and keep the player's other packs.
+# Continuity ships connected glass as built-in packs that start off. Add them and the pack's
+# resource packs (Continuity draws their glowing ores), and keep the player's other packs.
 $packLine = $lines | Where-Object { $_ -like 'resourcePacks:*' } | Select-Object -First 1
 $packs = [Collections.Generic.List[string]]@('vanilla', 'fabric')
 if ($packLine) { $packs = [Collections.Generic.List[string]]@(ConvertFrom-Json $packLine.Substring('resourcePacks:'.Length) | ForEach-Object { $_ }) }
-foreach ($p in 'continuity:default', 'continuity:glass_pane_culling_fix') { if ($p -notin $packs) { $packs.Add($p) } }
+foreach ($p in @('continuity:default', 'continuity:glass_pane_culling_fix') + @($resourceFiles | ForEach-Object { "file/$($_.file)" })) { if ($p -notin $packs) { $packs.Add($p) } }
 $lines = @($lines | Where-Object { $_ -notlike 'resourcePacks:*' }) + ('resourcePacks:' + (ConvertTo-Json @($packs) -Compress))
 # Without a version line Minecraft treats the file as pre-1.13 and reads key names as numbers.
 # That fails, and Minecraft then resets every option to default. 3955 is the 1.21.1 data version.
