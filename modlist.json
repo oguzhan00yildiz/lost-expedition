@@ -282,6 +282,15 @@
                       "sha512":  "8614a374593698069a80ac74de8cd9c28f3928d16819a0e0d6320b538e823f7e54e8be06d5ea5a9c268beb0e02073209d1f831a02dede851588b972367680853"
                   },
                   {
+                      "id":  "continuity",
+                      "version":  "3.0.0+1.21",
+                      "side":  "client",
+                      "type":  "mod",
+                      "file":  "continuity-3.0.0+1.21.jar",
+                      "url":  "https://cdn.modrinth.com/data/1IjD5062/versions/kSPJ4hQv/continuity-3.0.0%2B1.21.jar",
+                      "sha512":  "3601ddb50f19142c087d32525bc0afcfb5f49a2e7477b6645a98ec191218739fdf3c6ac95cd298e826eb34fc533af43bb0e78c64e51292866ecabade4d14b13a"
+                  },
+                  {
                       "id":  "immediatelyfast",
                       "version":  "1.6.15+1.21.1-fabric",
                       "side":  "client",
